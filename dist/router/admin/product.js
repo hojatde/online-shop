@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const product_1 = require("../../controller/admin/product");
+const uploadFiles_1 = require("../../controller/admin/uploadFiles");
+const adminProductRouter = (0, express_1.Router)();
+adminProductRouter.get('/products', product_1.getAdminProductsList);
+adminProductRouter.get('/product/create', product_1.getAdminCreateProduct);
+adminProductRouter.post('/product/create', uploadFiles_1.postUploadImages, product_1.postAdminCreateProduct);
+adminProductRouter.post('/product/:productId/edit', uploadFiles_1.postUploadImages, product_1.postAdminEditProduct);
+adminProductRouter.get('/product/:productId', product_1.getAdminProductIndex);
+adminProductRouter.get('/test', product_1.getAdminTest);
+exports.default = adminProductRouter;

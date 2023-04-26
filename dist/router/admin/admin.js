@@ -1,0 +1,21 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const is_admin_1 = require("../../middleware/auth/is-admin");
+const category_1 = __importDefault(require("./category"));
+const categoryDiscount_1 = __importDefault(require("./categoryDiscount"));
+const order_1 = __importDefault(require("./order"));
+const product_1 = __importDefault(require("./product"));
+const productDiscount_1 = __importDefault(require("./productDiscount"));
+const user_1 = __importDefault(require("./user"));
+const adminRouter = (0, express_1.Router)();
+adminRouter.use('/admin', is_admin_1.isAdminMiddleware, user_1.default);
+adminRouter.use('/admin', is_admin_1.isAdminMiddleware, product_1.default);
+adminRouter.use('/admin', is_admin_1.isAdminMiddleware, category_1.default);
+adminRouter.use('/admin', is_admin_1.isAdminMiddleware, productDiscount_1.default);
+adminRouter.use('/admin', is_admin_1.isAdminMiddleware, categoryDiscount_1.default);
+adminRouter.use('/admin', is_admin_1.isAdminMiddleware, order_1.default);
+exports.default = adminRouter;

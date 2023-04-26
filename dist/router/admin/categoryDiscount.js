@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const categoryDiscount_1 = require("../../controller/admin/categoryDiscount");
+const adminCategoryDiscountRouter = (0, express_1.Router)();
+adminCategoryDiscountRouter.get('/categoryDiscounts', categoryDiscount_1.getAdminCategoryDiscounts);
+adminCategoryDiscountRouter.get('/categoryDiscount/create', categoryDiscount_1.getAdminCategoryDiscountCreate);
+adminCategoryDiscountRouter.post('/categoryDiscount/create', categoryDiscount_1.postAdminCategoryDiscountCreate);
+adminCategoryDiscountRouter.get('/categoryDiscount/:categoryDiscountId/edit', categoryDiscount_1.getAdminCategoryDiscountEdit);
+exports.default = adminCategoryDiscountRouter;
