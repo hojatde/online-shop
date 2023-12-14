@@ -1,4 +1,4 @@
-# online-shop-express-ejs
+# online-shop
 
 backend:
 express - ts - database=>mysql=>sequelize - Authentication=>session - uploader=>multer - dataValidation=>expressValidator - viewEngine=>ejs
