@@ -1,9 +1,8 @@
 # online-shop-express-ejs
-فروش محصولات
 
-backend express ejs
-fornt html css
+backend:
+express - ts - database=>mysql=>sequelize - Authentication=>session - uploader=>multer - dataValidation=>expressValidator - viewEngine=>ejs
 
+fron:
+bootstrap-js-html-css
 
-هر محصول ویژگی های:
-عنوان-توضیحات-قیمت اصلی-قیمت فروش-تعداد اصلی-تعداد فروش-4 تصویر-دسته بندی- تخفیف روی دسته بندی - تخفیف روی کالای خاص و ...
